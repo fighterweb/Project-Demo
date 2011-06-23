@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -41,6 +42,9 @@ public class WebViewDemo extends Activity {
 //				 startActivity(mIntent);
 				mIntent.setClass(WebViewDemo.this, VideoActivity.class);
 				startActivity(mIntent);
+			}
+			public void showVideo() {
+				Log.i("START THE VIDEO","SHOW THE MESSAGE HERE");
 			}
 		}, "demo");
 		// º”‘ÿ“≥√Ê
