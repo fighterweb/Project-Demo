@@ -1,6 +1,7 @@
 package com.web.view;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
@@ -22,11 +23,31 @@ public class MyWebView extends Activity{
 		// 加上这句话才能使用javascript方法
 		mWebSettings.setJavaScriptEnabled(true);
 		mWebView.addJavascriptInterface(new Object(){
-			private void showVideo(){
-				Log.i(TAG,"Called here!");
+			
+			@SuppressWarnings("unused")
+			// The function must be public.
+			public void showVideo(int num){
+				
+				Intent mIntent = new Intent();
+				mIntent.setClass(MyWebView.this, VideoActivity.class);
+				Bundle mBundle = new Bundle();
+				
+				if(num == 0){
+					
+					Log.i("START THE VIDEO","SHOW THE MESSAGE HERE");
+					mBundle.putInt("VIDEO_ID", 0);
+
+				}else if(num == 1){
+					
+					mBundle.putInt("VIDEO_ID", 1);
+				}	
+					mIntent.putExtras(mBundle);
+					startActivity(mIntent);
 			}
 		},"imedia");
-        Bundle bundle = this.getIntent().getExtras(); 
+		//mWebView.loadUrl("http://192.168.1.136/imedia-fm/alpha/main.html");
+        Bundle bundle = this.getIntent().getExtras();
+        
         mWebView.loadUrl(bundle.getString("KEY_ADRESS"));       
 	}
 }

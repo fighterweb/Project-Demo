@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, SetAddress!</string>
-    <string name="app_name">CallMyWebView</string>
+    <string name="hello">Hello World, StreamMedia!</string>
+    <string name="app_name">imedia_wv</string>
+    <string name="play">PLAY</string>
+    <string name="pause">PAUSE</string>
+    <string name="reset">RESET</string>
+    <string name="stop">STOP</string>
 </resources>

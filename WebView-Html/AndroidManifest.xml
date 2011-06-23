@@ -16,5 +16,6 @@
         </activity>
 		<activity android:name="MyWebView"
 				  android:screenOrientation="landscape"></activity>
+		<activity android:name="VideoActivity"></activity>
     </application>
 </manifest>

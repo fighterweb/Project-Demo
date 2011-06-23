@@ -15,15 +15,30 @@ public final class R {
     }
     public static final class id {
         public static final int button_go=0x7f050001;
+        public static final int button_pause=0x7f050009;
+        public static final int button_play=0x7f050008;
+        public static final int button_reset=0x7f05000a;
+        public static final int button_stop=0x7f05000b;
         public static final int editText_address=0x7f050000;
-        public static final int webView1=0x7f050002;
+        public static final int frameLayout1=0x7f050003;
+        public static final int linearLayout1=0x7f050007;
+        public static final int seekBar_move=0x7f050006;
+        public static final int surface=0x7f050004;
+        public static final int txt_load=0x7f050005;
+        public static final int txt_video=0x7f050002;
+        public static final int webView1=0x7f05000c;
     }
     public static final class layout {
         public static final int main=0x7f030000;
-        public static final int webview=0x7f030001;
+        public static final int video=0x7f030001;
+        public static final int webview=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f040001;
         public static final int hello=0x7f040000;
+        public static final int pause=0x7f040003;
+        public static final int play=0x7f040002;
+        public static final int reset=0x7f040004;
+        public static final int stop=0x7f040005;
     }
 }

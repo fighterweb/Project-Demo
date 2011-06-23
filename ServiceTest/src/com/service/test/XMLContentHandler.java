@@ -74,7 +74,7 @@ public class XMLContentHandler extends DefaultHandler{
 		if("images".equals(localName)){
 			
 			imgCache = new ImageCache();
-			imgCache.setId(new Integer(attributes.getValue(0)));
+			//imgCache.setId(new Integer(attributes.getValue(0)));
 		}
 		preTag = localName;
 		// START

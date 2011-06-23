@@ -43,18 +43,24 @@ public class WebViewDemo extends Activity {
 				mIntent.setClass(WebViewDemo.this, VideoActivity.class);
 				startActivity(mIntent);
 			}
+			@SuppressWarnings("unused")
 			public void showVideo() {
 				Log.i("START THE VIDEO","SHOW THE MESSAGE HERE");
+				Intent mIntent = new Intent();
+				mIntent.setClass(WebViewDemo.this, VideoActivity.class);
+				startActivity(mIntent);
 			}
-		}, "demo");
+		}, "imedia");
 		// 加载页面
-		mWebView.loadUrl("file:///android_asset/demo.html");
+		//mWebView.loadUrl("file:///android_asset/alpha/main.html");
+		mWebView.loadUrl("http://192.168.1.136/imedia-fm/alpha/main.html");
 		mButton = (Button) findViewById(R.id.button);
 		// 给button添加事件响应,执行JavaScript的fillContent()方法
 		mButton.setOnClickListener(new Button.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				mWebView.loadUrl("javascript:fillContent()");
+				
 			}
 		});
 	}
