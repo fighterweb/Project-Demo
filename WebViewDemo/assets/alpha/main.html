@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>Test</title>
+        
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=1;" /> 
+        <meta name="apple-mobile-web-app-capable" content="yes" /> 
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        
+		<style type="text/css" media="screen">
+        
+		html, body { height:480px; background-color: #ffffff;}
+		body { margin:0; padding:0; overflow:hidden; background:url(page_bg.jpg); }
+        img { margin:0; padding:0; }
+        
+        #frm { position:absolute; left:0px; top:0px; height:320px; width:480px; overflow:hidden; }
+        
+        #navMain { left:0px; top:0px; width:35px; height:320px; position:absolute; overflow:hidden; background:url(navMain_TV.png); }
+        #navHeader { left:177px; top:0px; width:200px; height:320px; position:absolute; overflow:hidden; background:url(navOptions_TV.png); }
+        
+        #navFilterButtons { left:42px; top:28px; position:absolute; }
+        #navFilterButtons img { margin-right:2px;}
+        
+        #ctFav { position:absolute; left:48px; top:66px; width:216px; height:243px; }
+        #ctCloud { position:absolute; left:281px; top:28px; width:210px; height:193px; }
+        #ctMoreOptions { position:absolute; left:277px; top:28px; width:0px; height:292px; overflow:hidden; }
+        
+        #ctFav img { margin-right:6px; }
+        #ctFav .ld { position:relative; float:left; width:66px; height:35px; margin:0 6px 6px 0; background:url(preview_fv/_ld.png); }
+        #ctFav .ld img { margin:16px 0 0 23px; }
+        
+        #box { position:absolute; left:0px; top:0px; width:320px; height:480px; background:#efefef; }
+		</style>
+        
+        <script src="xui-2.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+
+		var cmdFilterMore = function(e) { 
+            
+			var o = x$('#ctCloud');
+		
+            // check position
+            
+            if (o.getStyle('width') == "100px") {
+            
+                var o = x$('#ctCloud');
+                o.tween({ left:'390px' }, function() {});
+                x$('#ctMoreOptions').tween({ width:'100px' });            
+            
+            } else {
+
+                var o = x$('#ctCloud');
+                o.tween({ left:'390px' }, function() {});
+                x$('#ctMoreOptions').tween({ width:'100px' });
+
+            }
+			
+		}
+        
+        var cmdOpenVideo = function(e) { 
+            
+            alert("open video");
+            window.imedia.showVideo();
+            
+        }
+
+
+        x$(window).load(function(e) {
+
+            // var nPageH = x$(document).height();
+            // var nViewH = window.outerHeight;
+            // window.scrollTo(0,10);
+            
+            x$('#btnFilter_New').click( function(e) { alert("new"); });
+            x$('#btnFilter_Fav').click( function(e) { alert("fav"); });
+            // ...
+            
+            // x$('#btnFilter_More').click( cmdFilterMore ); 
+            x$('#btnFilter_More').touchstart( cmdFilterMore );
+            
+            x$('#imgFav_1').click( cmdOpenVideo );
+
+            /*
+            x$('#box').tween({ left:'100px', backgroundColor:'blue' });
+            x$('#box').tween({ left:'100px', backgroundColor:'blue' }, function() {
+                // alert('done!');
+            });
+            */
+            
+            // LOADING
+
+        });
+            
+        </script>
+            
+	</head>
+	<body>
+
+    <div id="frm">
+    
+    <div id="navMain"></div>
+    
+    <div id="navHeader"></div>
+        
+    <div id="navFilterButtons">
+        <img id="btnFilter_New" src="btnFilter_New.png" 
+        /><img id="btnFilter_Fav" src="btnFilter_Fav.png" 
+        /><img src="btnFilter_Hot.png" 
+        /><img id="btnFilter_More" src="btnFilter_More.png" />
+        </div>
+        
+    <div id="ctFav"> <!-- Bookmarks -->
+    	<div class="ld"/><img src="preview_fv/_ld.gif" /></div><div class="ld"/></div><div class="ld"/></div>
+    	<img id="imgFav_1" src="preview_fv/1.png" />
+    	<img src="preview_fv/2.png" />
+    	<img src="preview_fv/1.png" />
+    	<img src="preview_fv/2.png" />
+    	<img src="preview_fv/1.png" />
+    	<img src="preview_fv/2.png" />
+    	</div>
+    
+    <div id="ctMoreOptions">
+    	<img src="preview_cl/_btnFilterMoreOptions.png" />    
+		</div>
+		
+    <div id="ctCloud">
+    	<img src="preview_cl/_ld.png" />
+    	<img src="preview_cl/2.jpg" />
+    	<img src="preview_cl/3.jpg" />
+    	<img src="preview_cl/1.jpg" />
+    	<img src="preview_cl/2.jpg" />
+    	<img src="preview_cl/3.jpg" />
+    	</div>
+
+    </div>    
+
+	</body>
+</html>

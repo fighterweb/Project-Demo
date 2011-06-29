@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:orientation="vertical">
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/hello"
+    />
+<RelativeLayout  android:layout_width="match_parent" android:id="@+id/linearLayout1" android:layout_height="wrap_content">
+    <EditText android:text="UserName" 
+    		  android:id="@+id/loginUserNameEdit" 
+    		  android:layout_height="wrap_content"
+    		  android:layout_alignParentLeft="true" android:layout_width="230dip"/>
+    <CheckBox android:text="Check" 
+    		  android:id="@+id/loginRememberMeCheckBox" 
+    		  android:layout_width="wrap_content" 
+    		  android:layout_height="wrap_content"
+    		  android:layout_alignParentRight="true"/>
+</RelativeLayout >
+<RelativeLayout  android:layout_width="match_parent" android:id="@+id/linearLayout1" android:layout_height="wrap_content">
+    <EditText android:text="password" 
+    		  android:id="@+id/loginPasswordEdit" 
+    		  android:layout_height="wrap_content"
+    		  android:layout_alignParentLeft="true" android:layout_width="230dip"/>
+    <Button android:text="Summit" 
+    		  android:id="@+id/loginSubmit" 
+    		  android:layout_width="wrap_content" 
+    		  android:layout_height="wrap_content"
+    		  android:layout_alignParentRight="true"/>
+</RelativeLayout >
+</LinearLayout>
