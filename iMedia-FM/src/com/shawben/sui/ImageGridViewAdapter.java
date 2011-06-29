@@ -24,6 +24,7 @@ public class ImageGridViewAdapter extends ArrayAdapter<ImageInfo>{
         this.gridView = gridView;
         asyncImageLoader = new AsyncImageLoader();
     }
+	// 表里显示每一项的时候，都会调用他，返回一个View.
 	public View getView(int position, View convertView, ViewGroup parent){
 		Activity activity = (Activity) getContext();
 		// Inflate the views from XML
@@ -37,7 +38,7 @@ public class ImageGridViewAdapter extends ArrayAdapter<ImageInfo>{
         } else {
             viewCache = (ViewCache)rowView.getTag();
         }
-		//注意这里
+		// 注意这里
 		ImageInfo imageInfo = getItem(position);
 		// Load the image and set it on the ImageView
 		String imageUrl = imageInfo.getImageUrl();

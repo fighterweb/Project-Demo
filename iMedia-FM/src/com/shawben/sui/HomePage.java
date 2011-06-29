@@ -583,7 +583,7 @@ OnTouchListener, android.view.GestureDetector.OnGestureListener{
 		else if (tag == 2)
 		{
 			
-//			//Bitmap bmp = BitmapFactory.decodeFile(path);
+//			Bitmap bmp = BitmapFactory.decodeFile(path);
 //			mapCache2.add(bmp);
 		}
 		

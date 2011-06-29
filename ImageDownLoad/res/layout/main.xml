@@ -4,8 +4,9 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-    <GridView 
+    <ListView 
     	android:id="@+id/myGridView" 
     	android:layout_height="fill_parent" 
-    	android:layout_width="fill_parent"/>
+    	android:layout_width="fill_parent"
+    	android:dividerHeight="0px"/>
 </LinearLayout>

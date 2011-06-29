@@ -10,18 +10,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 
 public class ImageGridViewAdapter extends ArrayAdapter<ImageInfo>{
-	private GridView gridView;
+	private ListView mListView;
 	private AsyncImageLoader asyncImageLoader;
-	public ImageGridViewAdapter(Activity activity, List<ImageInfo> imageAndTexts, GridView gridView) {
+	int count = 6;
+	public ImageGridViewAdapter(Activity activity, 
+			List<ImageInfo> imageAndTexts, ListView listView) {
         super(activity, 0, imageAndTexts);
-        this.gridView = gridView;
+        this.mListView = listView;
         asyncImageLoader = new AsyncImageLoader();
     }
+	// 适配器数据项的数量
+	@Override
+	public int getCount(){
+		return count;
+	}
 	public View getView(int position, View convertView, ViewGroup parent){
 		Activity activity = (Activity) getContext();
 		// Inflate the views from XML
@@ -29,7 +36,8 @@ public class ImageGridViewAdapter extends ArrayAdapter<ImageInfo>{
 		ViewCache viewCache;
 		if (rowView == null) {
             LayoutInflater inflater = activity.getLayoutInflater();
-            rowView = inflater.inflate(R.layout.adapter_layout_for_imagedownloader, null);
+            rowView = inflater.inflate(R.layout.adapter_layout_for_imagedownloader,
+            		null);
             viewCache = new ViewCache(rowView);
             rowView.setTag(viewCache);
         } else {
@@ -41,12 +49,14 @@ public class ImageGridViewAdapter extends ArrayAdapter<ImageInfo>{
 		String imageUrl = imageInfo.getImageUrl();
 		ImageView imageView = viewCache.getImageView();
         imageView.setTag(imageUrl);
-        Drawable cachedImage = asyncImageLoader.loadDrawable(imageUrl, new ImageCallback(){
+        Drawable cachedImage = asyncImageLoader.loadDrawable(imageUrl,
+        		new ImageCallback(){
 
 			@Override
 			public void imageLoaded(Drawable imageDrawable, String imageUrl) {
 				// TODO Auto-generated method stub
-				ImageView imageViewByTag = (ImageView) gridView.findViewWithTag(imageUrl);
+				ImageView imageViewByTag = 
+					(ImageView) mListView.findViewWithTag(imageUrl);
 				 if (imageViewByTag != null) {
                      imageViewByTag.setImageDrawable(imageDrawable);
                  }
