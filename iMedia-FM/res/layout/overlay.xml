@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- overlay -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <Button 
+    	android:layout_width="wrap_content" 
+    	android:text="Start" 
+    	android:layout_height="wrap_content" 
+    	android:layout_alignParentRight="true"
+    	android:layout_above="@+id/button_show_next" 
+    	android:id="@+id/button_showhow"/>
+    <Button 
+    	android:layout_width="wrap_content" 
+    	android:text="Next" 
+    	android:layout_height="wrap_content" 
+    	android:id="@+id/button_show_next" 
+    	android:layout_alignParentRight="true"
+    	android:layout_alignParentBottom="true"/>  
+   
+</RelativeLayout>
