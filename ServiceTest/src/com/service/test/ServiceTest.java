@@ -24,7 +24,9 @@ import android.widget.TextView;
 public class ServiceTest extends Activity {
 	//String path = "http://shawbenwiki.github.com/iMedia-FM/MySQL.xml";
 	// String path = "http://shawbenwiki.github.com/iMedia-FM/XML.xml";
-	String path = "http://192.168.1.92/WebSite1/MySQL.aspx";
+	//String path = "http://192.168.1.92/WebSite1/MySQL.aspx";
+	String parameter = "?page=";
+	String path = "http://192.168.1.230:8080/iMediafmsvr02/MyTestServlet"+parameter+"2";
 	final String TAG = "SERVICE TEST";
 	List<ImageCache> imgCaches;
 	Button buttonTest;

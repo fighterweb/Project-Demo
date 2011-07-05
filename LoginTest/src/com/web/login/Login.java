@@ -109,7 +109,7 @@ public class Login extends Activity {
         share = null;  
     }  
   
-      
+    // 验证本地登录  
     private boolean validateLocalLogin(String userName, String password, String validateUrl) {  
           
         boolean loginState = false;  
@@ -196,7 +196,7 @@ public class Login extends Activity {
         share = null;  
     }  
   
-      
+    // 判断checkbox的状态  
     private boolean isRememberMe() {  
         if (view_rememberMe.isChecked()) {  
             return true;  
@@ -212,7 +212,7 @@ public class Login extends Activity {
                     "", true, true);  
               
             Thread loginThread = new Thread(new LoginFailureHandler());  
-            loginThread.start();  
+            loginThread.start();  // 在这里启动登录线程
         }  
     };  
   
@@ -220,7 +220,7 @@ public class Login extends Activity {
     // }  
     // };  
   
-      
+    // 监听CheckedBox   
     private OnCheckedChangeListener rememberMeListener = new OnCheckedChangeListener() {  
   
   
@@ -243,7 +243,7 @@ public class Login extends Activity {
         view_rememberMe.setOnCheckedChangeListener(rememberMeListener);  
     }  
   
-      
+    // 添加菜单  
     public boolean onCreateOptionsMenu(Menu menu) {  
         super.onCreateOptionsMenu(menu);  
         menu.add(0, MENU_EXIT, 0, getResources().getText(R.string.MENU_EXIT));  
@@ -265,7 +265,7 @@ public class Login extends Activity {
         return true;  
     }  
   
-      
+    // 弹出对话框  
     private void alertAbout() {  
         new AlertDialog.Builder(Login.this).setTitle(R.string.MENU_ABOUT)  
                 .setMessage(R.string.aboutInfo).setPositiveButton(  
@@ -282,14 +282,16 @@ public class Login extends Activity {
         SharedPreferences share = getSharedPreferences(SHARE_LOGIN_TAG, 0);  
         share.edit().putString(SHARE_LOGIN_PASSWORD, "").commit();  
         share = null;  
-    }  
-  
+    } 
+    
+    // 启动登录到service的线程。
     class LoginFailureHandler implements Runnable {  
   
         public void run() {  
             userName = view_userName.getText().toString();  
             password = view_password.getText().toString();  
-              
+            
+            // 访问服务器的链接
             String validateURL="http://10.0.2.2:8080/androidShopServer/loginCheck.action?userName="  
                 + userName + "&password=" + password;  
             boolean loginState = validateLocalLogin(userName, password,  
@@ -303,7 +305,7 @@ public class Login extends Activity {
                 Bundle bundle = new Bundle();  
                 bundle.putString("MAP_USERNAME", userName);  
                 intent.putExtras(bundle);  
-                  
+            
                 startActivity(intent);  
                 proDialog.dismiss();  
             } else {  

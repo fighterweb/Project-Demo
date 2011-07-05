@@ -51,7 +51,7 @@ public class XMLContentHandler extends DefaultHandler{
 		// START
 		 Log.i(TAG,"解析到结束标志："+localName);
 		// END
-		if("images".equals(localName)&&imgCache != null){
+		if("Row".equals(localName)&&imgCache != null){
 			// START
 			 Log.i(TAG,"ADD imgCache");
 			// END
@@ -71,7 +71,7 @@ public class XMLContentHandler extends DefaultHandler{
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws 
 	SAXException{
-		if("images".equals(localName)){
+		if("Row".equals(localName)){
 			
 			imgCache = new ImageCache();
 			//imgCache.setId(new Integer(attributes.getValue(0)));
